@@ -7,6 +7,12 @@ const currencies = require('../lib/currencies.json');
 
 const API = 'https://api.fixer.io/latest';
 
+/**
+ * @func convert
+ * @param configuration
+ * convert the amount of one currency to one or multiple
+ */
+
 const convert = configuration => {
   const {amount, to, from, response, loading} = configuration;
 
@@ -33,6 +39,12 @@ const convert = configuration => {
   );
   process.exit(1);
 };
+
+/**
+ * @func cash
+ * @param command
+ * Call the API in order to retrieve the currency needed. then call the precedent function
+ */
 
 const cash = async command => {
   const amount = command.amount;
